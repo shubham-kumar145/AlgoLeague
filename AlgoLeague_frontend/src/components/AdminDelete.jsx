@@ -91,11 +91,11 @@ const AdminDelete = () => {
       </div>
 
       {/* ===== Table Card ===== */}
-      <div className="max-w-7xl mx-auto bg-base-100 rounded-2xl shadow-xl overflow-hidden">
+      <div className="max-w-7xl mx-auto bg-[#1D232A] rounded-2xl shadow-xl overflow-hidden">
 
         <div className="overflow-x-auto">
           <table className="table w-full text-sm">
-            <thead className="bg-base-200 text-xs uppercase text-gray-400">
+            <thead className="bg-[#191E24] text-xs uppercase text-gray-400">
               <tr>
                 <th className="px-4 py-3">#</th>
                 <th className="px-4 py-3">Title</th>
@@ -109,7 +109,7 @@ const AdminDelete = () => {
               {problems.map((problem, index) => (
                 <tr
                   key={problem._id}
-                  className="hover:bg-base-200/70 transition"
+                  className="hover:bg-[#191E24] transition"
                 >
                   <td className="px-4 py-3">{index + 1}</td>
 
@@ -162,4 +162,5 @@ const AdminDelete = () => {
 };
 
 export default AdminDelete;
+
 
