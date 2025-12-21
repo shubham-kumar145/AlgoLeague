@@ -15,13 +15,34 @@ const submitRouter = require("./routes/submit");
 
 // ================== MIDDLEWARE ==================
 
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     process.env.FRONTEND_URL
+//   ],
+//   credentials: true
+// }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL
+];
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    process.env.FRONTEND_URL
-  ],
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // allow server-to-server
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+// ✅ THIS LINE IS MANDATORY
+app.options("*", cors());
+
 
 app.use(express.json());
 app.use(cookieParser());
@@ -60,3 +81,4 @@ const startServer = async () => {
 };
 
 startServer();
+
