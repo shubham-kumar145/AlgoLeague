@@ -24,8 +24,9 @@ const submitRouter = require("./routes/submit");
 // }));
 const allowedOrigins = [
   "http://localhost:5173",
-  process.env.FRONTEND_URL
+  "https://algoleague.vercel.app"
 ];
+
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -81,4 +82,5 @@ const startServer = async () => {
 };
 
 startServer();
+
 
