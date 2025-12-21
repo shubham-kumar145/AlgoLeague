@@ -60,7 +60,7 @@ const AdminDelete = () => {
     <div className="min-h-screen bg-[#020617] px-4 py-6">
 
       {/* ===== Header ===== */}
-      <div className="flex items-center justify-between bg-pink-500 rounded-xl px-6 py-4 shadow-md mb-6 flex-wrap gap-y-4">
+      <div className="flex items-center justify-between bg-[#020617] rounded-xl px-6 py-4 shadow-md mb-6 flex-wrap gap-y-4">
 
         {user?.role === 'admin' ? (
           <NavLink
@@ -162,5 +162,6 @@ const AdminDelete = () => {
 };
 
 export default AdminDelete;
+
 
 
