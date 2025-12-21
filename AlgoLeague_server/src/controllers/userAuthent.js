@@ -26,7 +26,13 @@ const register = async (req, res) => {
             role: user.role
         }
         const token = jwt.sign({ _id: user._id, emailId: emailId, role: 'user' }, process.env.JWT_KEY, { expiresIn: 60 * 60 })
-        res.cookie('token', token, { maxAge: 60 * 60 * 1000 })
+        // res.cookie('token', token, { maxAge: 60 * 60 * 1000 })
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  maxAge: 60 * 60 * 1000
+});
 
         res.status(201).json({
             user: reply,
@@ -63,7 +69,14 @@ const login = async (req, res) => {
             role: user.role
         }
         const token = jwt.sign({ _id: user._id, emailId: emailId, role: user.role }, process.env.JWT_KEY, { expiresIn: 60 * 60 })
-        res.cookie('token', token, { maxAge: 60 * 60 * 1000 })
+        // res.cookie('token', token, { maxAge: 60 * 60 * 1000 })
+        res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  maxAge: 60 * 60 * 1000
+});
+
         res.status(201).json({
             user: reply,
             message: "Logged In Successfully"
@@ -74,17 +87,39 @@ const login = async (req, res) => {
 }
 
 const logout = async (req, res) => {
-    try {
-        const { token } = req.cookies
-        const payload = jwt.decode(token);
-        await redisClient.set(`token:${token}`, "Blocked")
-        await redisClient.expireAt(`token:${token}`, payload.exp)
-        res.cookie("token", null, { expires: new Date(Date.now()) })
-        res.status(200).send("Logged Out Succesfully")
-    } catch (err) {
-        res.status(503).send("ERROR: " + err)
+  try {
+    const { token } = req.cookies;
+
+    if (!token) {
+      return res.status(400).json({ message: "No token found" });
     }
-}
+
+    const payload = jwt.decode(token);
+    if (!payload || !payload.exp) {
+      return res.status(400).json({ message: "Invalid token" });
+    }
+
+    // Block token in Redis
+    await redisClient.set(`token:${token}`, "blocked");
+    await redisClient.expireAt(`token:${token}`, payload.exp);
+
+    // Clear cookie (IMPORTANT: must match creation options)
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none"
+    });
+
+    return res.status(200).json({
+      success: true,
+      message: "Logged out successfully"
+    });
+  } catch (err) {
+    console.error("Logout error:", err);
+    return res.status(500).json({ message: "Logout failed" });
+  }
+};
+
 
 const adminRegister = async (req, res) => {
     try {
@@ -177,3 +212,4 @@ const alluserdata = async (req, res) => {
 };
 
 module.exports = { login, register, logout, adminRegister, alluserdata, deleteprofile, deleteuser, profileupdate }
+
