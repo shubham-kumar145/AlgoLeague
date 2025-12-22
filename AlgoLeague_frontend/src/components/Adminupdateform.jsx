@@ -401,13 +401,13 @@ const AdminUpdateform = () => {
           {errors.description && <p className="text-red-500 text-sm">{errors.description.message}</p>}
 
           <div className="flex gap-4">
-            <select {...register("difficulty")} className="select select-bordered bg-[#191E24] text-white">
+            <select {...register("difficulty")} className="select select-bordered bg-[#1E2939] text-white">
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
             </select>
 
-            <select {...register("tags")} className="select select-bordered bg-[#191E24] text-white">
+            <select {...register("tags")} className="select select-bordered bg-[#1E2939] text-white">
               <option value="array">Array</option>
               <option value="linkedlist">Linked List</option>
               <option value="graph">Graph</option>
@@ -420,9 +420,9 @@ const AdminUpdateform = () => {
             <h2 className="font-semibold text-lg mb-2 text-white">Visible Test Cases</h2>
             {visibleFields.map((_, index) => (
               <div key={index} className="space-y-2 mb-4">
-                <input {...register(`visibletestcases.${index}.input`)} placeholder="Input" className="input input-bordered w-full bg-[#191E24] text-white" />
-                <input {...register(`visibletestcases.${index}.output`)} placeholder="Output" className="input input-bordered w-full bg-[#191E24] text-white" />
-                <textarea {...register(`visibletestcases.${index}.explanation`)} placeholder="Explanation" className="textarea textarea-bordered w-full bg-[#191E24] text-white" />
+                <input {...register(`visibletestcases.${index}.input`)} placeholder="Input" className="input input-bordered w-full bg-[#1E2939] text-white" />
+                <input {...register(`visibletestcases.${index}.output`)} placeholder="Output" className="input input-bordered w-full bg-[#1E2939] text-white" />
+                <textarea {...register(`visibletestcases.${index}.explanation`)} placeholder="Explanation" className="textarea textarea-bordered w-full bg-[#1E2939] text-white" />
                 <button type="button" onClick={() => removeVisible(index)} className="btn btn-sm btn-error">
                   Remove
                 </button>
@@ -438,8 +438,8 @@ const AdminUpdateform = () => {
             <h2 className="font-semibold text-lg mb-2 text-white">Hidden Test Cases</h2>
             {hiddenFields.map((_, index) => (
               <div key={index} className="space-y-2 mb-4">
-                <input {...register(`hiddentestcases.${index}.input`)} placeholder="Input" className="input input-bordered w-full bg-[#191E24] text-white" />
-                <input {...register(`hiddentestcases.${index}.output`)} placeholder="Output" className="input input-bordered w-full bg-[#191E24] text-white" />
+                <input {...register(`hiddentestcases.${index}.input`)} placeholder="Input" className="input input-bordered w-full bg-[#1E2939] text-white" />
+                <input {...register(`hiddentestcases.${index}.output`)} placeholder="Output" className="input input-bordered w-full bg-[#1E2939] text-white" />
                 <button type="button" onClick={() => removeHidden(index)} className="btn btn-sm btn-error">
                   Remove
                 </button>
@@ -454,8 +454,8 @@ const AdminUpdateform = () => {
           {['C++', 'Java', 'JavaScript'].map((lang, index) => (
             <div key={index}>
               <h2 className="font-semibold text-lg text-white mb-2">{lang}</h2>
-              <textarea {...register(`StartCode.${index}.initialcode`)} className="textarea textarea-bordered w-full bg-[#191E24] text-white h-28" />
-              <textarea {...register(`referenceSolution.${index}.completeCode`)} className="textarea textarea-bordered w-full bg-[#191E24] text-white h-28 mt-2" />
+              <textarea {...register(`StartCode.${index}.initialcode`)} className="textarea textarea-bordered w-full bg-[#1E2939] text-white h-28" />
+              <textarea {...register(`referenceSolution.${index}.completeCode`)} className="textarea textarea-bordered w-full bg-[#1E2939] text-white h-28 mt-2" />
             </div>
           ))}
 
@@ -469,6 +469,7 @@ const AdminUpdateform = () => {
 };
 
 export default AdminUpdateform;
+
 
 
 
