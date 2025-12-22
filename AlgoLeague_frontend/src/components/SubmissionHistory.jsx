@@ -346,7 +346,7 @@ const SubmissionHistory = ({ problemId }) => {
                 {submissions.map((sub, index) => (
                   <tr
                     key={sub._id}
-                    className="hover:bg-[#191E24] transition-colors duration-200"
+                    className="bg-[#191E24] transition-colors duration-200"
                   >
                     <td className="font-medium text-gray-300">
                       {index + 1}
