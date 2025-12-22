@@ -273,14 +273,14 @@ const ProblemPage = () => {
                           problem.difficulty.slice(1)}
                       </span>
 
-                      <span className="badge badge-outline uppercase text-xs tracking-widest">
+                      <span className="badge badge-outline text-white uppercase text-xs tracking-widest">
                         {problem.tags}
                       </span>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <div className="rounded-2xl border border-base-300 bg-gradient-to-br from-base-100 to-base-300 p-6 shadow-sm">
+                  <div className="rounded-2xl !border !border-[#15191E] bg-gradient-to-br from-[#1D232A] to-[#15191E] p-6 shadow-sm">
                     <p className="text-[11px] uppercase font-semibold tracking-widest text-gray-400 mb-3">
                       Problem Description
                     </p>
@@ -299,7 +299,7 @@ const ProblemPage = () => {
                     {problem.visibletestcases.map((example, index) => (
                       <div
                         key={index}
-                        className="rounded-2xl border border-base-300 bg-gradient-to-br from-base-100 to-base-300 p-5 space-y-4 shadow-sm"
+                        className="rounded-2xl border border-[#15191E] bg-gradient-to-br from-[#1D232A] to-[#15191E] p-5 space-y-4 shadow-sm"
                       >
                         <h4 className="font-display font-semibold text-sm text-primary tracking-wide">
                           Example {index + 1}
@@ -337,7 +337,7 @@ const ProblemPage = () => {
                     Editorial
                   </h2>
 
-                  <div className="rounded-lg border border-base-300 bg-[#020617] p-5">
+                <div className="rounded-lg border border-[#15191E] bg-[#1D232A] p-5">
                     <div className="  whitespace-pre-wrap text-sm leading-relaxed text-gray-300">
                       {'Editorial is here for the problem'}
                     </div>
@@ -364,10 +364,10 @@ const ProblemPage = () => {
                       problem.referenceSolution.map((solution, index) => (
                         <div
                           key={index}
-                          className="rounded-2xl bg-[#020617] border border-base-300 overflow-hidden shadow-md"
+                          className="rounded-2xl bg-[#1D232A] border border-[#15191E] overflow-hidden shadow-md"
                         >
                           {/* Solution Header */}
-                          <div className="flex items-center justify-between bg-gradient-to-r from-base-200 to-base-300 px-5 py-3">
+                         <div className="flex items-center justify-between bg-gradient-to-r from-[#191E24] to-[#15191E] px-5 py-3">
                             <h3 className="font-display font-semibold text-sm text-white tracking-wide">
                               {problem?.title}
                               <span className="mx-2 text-gray-400">•</span>
@@ -390,7 +390,7 @@ const ProblemPage = () => {
                         </div>
                       ))
                     ) : (
-                      <div className="rounded-xl border border-base-300 bg-base-200 p-6 text-center">
+                     <div className="rounded-xl border border-[#15191E] bg-[#191E24] p-6 text-center">
                         <p className="text-gray-400 text-sm font-medium">
                           No solutions available yet.
                         </p>
@@ -398,7 +398,7 @@ const ProblemPage = () => {
                     )}
                   </div>
                 ) : (
-                  <div className="rounded-2xl border border-base-300 bg-base-200 p-8 text-center space-y-3">
+                <div className="rounded-2xl border border-[#15191E] bg-[#191E24] p-8 text-center space-y-3">
                     <p className="text-lg font-display font-semibold text-gray-200">
                       Premium Content Locked 🔒
                     </p>
@@ -416,7 +416,7 @@ const ProblemPage = () => {
                     My Submissions
                   </h2>
 
-                  <div className="rounded-lg border border-base-300 bg-base-200 p-4">
+                 <div className="rounded-lg border border-[#15191E] bg-[#191E24] p-4">
                     <SubmissionHistory problemId={problemId} />
                   </div>
                 </div>
@@ -432,12 +432,12 @@ const ProblemPage = () => {
       <div className="sm:w-1/2 h-full flex flex-col overflow-hidden">
 
         {/* ================= RIGHT TABS ================= */}
-        <div className="shrink-0 tabs rounded-xl tabs-bordered bg-base-200 px-5 py-2 shadow-sm flex gap-1">
+        <div className="shrink-0 tabs rounded-xl tabs-bordered bg-[#191E24] px-5 py-2 shadow-sm flex gap-1">
           <button
             className={`tab text-sm font-semibold transition
         ${activeRightTab === 'code'
-                ? 'tab-active text-primary border-primary'
-                : 'text-gray-500 hover:text-primary hover:bg-base-300 rounded-lg'
+                ? '!bg-[#191E24] !text-[#3b82f6] hover:!text-gray-300'
+                : '!bg-[#191E24] !text-gray-400 !border-transparent hover:!bg-[#121823] hover:!text-[#3b82f6] rounded-xl'
               }`}
             onClick={() => setActiveRightTab('code')}
           >
@@ -447,8 +447,8 @@ const ProblemPage = () => {
           <button
             className={`tab text-sm font-semibold transition
         ${activeRightTab === 'testcase'
-                ? 'tab-active text-primary border-primary'
-                : 'text-gray-500 hover:text-primary hover:bg-base-300 rounded-lg'
+                ? '!bg-[#191E24] !text-[#3b82f6] hover:!text-gray-300'
+                : '!bg-[#191E24] !text-gray-400 !border-transparent hover:!bg-[#121823] hover:!text-[#3b82f6] rounded-xl'
               }`}
             onClick={() => setActiveRightTab('testcase')}
           >
@@ -458,8 +458,8 @@ const ProblemPage = () => {
           <button
             className={`tab text-sm font-semibold transition
         ${activeRightTab === 'result'
-                ? 'tab-active text-primary border-primary'
-                : 'text-gray-500 hover:text-primary hover:bg-base-300 rounded-lg'
+                ? '!bg-[#191E24] !text-[#3b82f6] hover:!text-gray-300'
+                : '!bg-[#191E24] !text-gray-400 !border-transparent hover:!bg-[#121823] hover:!text-[#3b82f6] rounded-xl'
               }`}
             onClick={() => setActiveRightTab('result')}
           >
@@ -484,21 +484,22 @@ const ProblemPage = () => {
   ">
 
               {/* ===== Toolbar ===== */}
-              <div className="
-      shrink-0
-      flex flex-wrap gap-2 items-center justify-between
-      px-4 py-3
-      bg-base-200
-      border-b border-base-300
-    ">
+             <div className="
+  shrink-0
+  flex flex-wrap gap-2 items-center justify-between
+  px-4 py-3
+  bg-[#191E24]
+  border-b border-[#15191E]
+">
+
                 <div className="flex gap-2 flex-wrap">
                   {['cpp', 'java', 'javascript'].map((lang) => (
                     <button
                       key={lang}
                       className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition
               ${selectedLanguage === lang
-                          ? 'bg-primary text-white'
-                          : 'text-gray-400 hover:text-white hover:bg-base-300'
+                          ? 'bg-[#191E24] text-white'
+                          : 'text-gray-400 hover:text-white hover:bg-[#15191E]'
                         }`}
                       onClick={() => handleLanguageChange(lang)}
                     >
@@ -509,7 +510,7 @@ const ProblemPage = () => {
 
                 <select
                   name="editor_theme"
-                  className="select select-sm bg-base-300 text-white"
+                  className="select select-sm bg-[#15191E] text-white"
                   onChange={(e) => set_editor_theme(e.target.value)}
                 >
                   <option value="vs-dark">Dark</option>
@@ -560,14 +561,15 @@ const ProblemPage = () => {
               {/* ===== Bottom Bar ===== */}
               <div
                 className="
-        shrink-0
-        px-4 py-3
-        bg-base-200
-        border-t border-base-300
-        flex justify-between items-center
+       shrink-0
+px-4 py-3
+bg-[#191E24]
+border-t border-[#15191E]
+flex justify-between items-center
 
-        sticky bottom-0 z-30
-        sm:static
+sticky bottom-0 z-30
+sm:static
+
       "
               >
                 <button
@@ -619,10 +621,10 @@ const ProblemPage = () => {
 
                 {runResult ? (
                   <div
-                    className={`rounded-2xl border border-base-300 p-5 shadow-sm
+                    className={`rounded-2xl border border-[#15191E] p-5 shadow-sm
             ${runResult.success
-                        ? 'bg-gradient-to-br from-success/10 to-success/5'
-                        : 'bg-gradient-to-br from-error/10 to-error/5'
+                        ? 'bg-gradient-to-br from-[#191E24] to-[#15191E]'
+                        : 'bg-gradient-to-br from-[#191E24] to-[#15191E]'
                       }`}
                   >
                     {runResult.success ? (
@@ -635,14 +637,14 @@ const ProblemPage = () => {
                           </h4>
 
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 text-sm">
-                            <div className="rounded-lg bg-base-200 px-4 py-3 text-center">
+                            <div className="rounded-lg bg-[#191E24] px-4 py-3 text-center">
                               <p className="text-xs text-gray-400">Runtime</p>
                               <p className="font-semibold text-white">
                                 {runResult.runtime} sec
                               </p>
                             </div>
 
-                            <div className="rounded-lg bg-base-200 px-4 py-3 text-center">
+                            <div className="rounded-lg bg-[#191E24] px-4 py-3 text-center">
                               <p className="text-xs text-gray-400">Memory</p>
                               <p className="font-semibold text-white">
                                 {runResult.memory} KB
@@ -656,7 +658,7 @@ const ProblemPage = () => {
                           {runResult.testCases.map((tc, i) => (
                             <div
                               key={i}
-                              className="bg-base-200 border border-base-300 p-4 rounded-xl text-xs"
+                              className="bg-[#191E24] border border-[#15191E] p-4 rounded-xl text-xs"
                             >
                               <div className="font-mono space-y-1 text-gray-200">
                                 <div>
@@ -683,7 +685,7 @@ const ProblemPage = () => {
                           </h2>
 
                           {/* Code Scroll (HEIGHT LIMITED) */}
-                          <div className="rounded-2xl overflow-hidden border border-base-300 max-h-[40vh] shadow-inner">
+                          <div className="rounded-2xl overflow-hidden border border-[#15191E] max-h-[40vh] shadow-inner">
                             <SyntaxHighlighter
                               language="javascript"
                               style={vscDarkPlus}
@@ -707,7 +709,7 @@ const ProblemPage = () => {
                           {runResult.testCases.map((tc, i) => (
                             <div
                               key={i}
-                              className="bg-base-200 border border-base-300 p-4 rounded-xl text-xs"
+                              className="bg-[#191E24] border border-[#15191E] p-4 rounded-xl text-xs"
                             >
                               <div className="font-mono space-y-1">
                                 <div><strong>Input:</strong> {tc.stdin}</div>
@@ -759,12 +761,12 @@ const ProblemPage = () => {
 
                 {submitResult ? (
                   <div
-                    className={`rounded-2xl border border-base-300 p-5 shadow-sm
+                    className={`rounded-2xl border border-[#15191E] p-5 shadow-sm
             ${submitResult.accepted === true
-                        ? 'bg-gradient-to-br from-success/10 to-success/5'
-                        : submitResult.accepted === false
-                          ? 'bg-gradient-to-br from-error/10 to-error/5'
-                          : 'bg-gradient-to-br from-info/10 to-info/5'
+                      ? 'bg-gradient-to-br from-[#191E24] to-[#15191E]'
+: submitResult.accepted === false
+  ? 'bg-gradient-to-br from-[#191E24] to-[#15191E]'
+  : 'bg-gradient-to-br from-[#191E24] to-[#15191E]'
                       }`}
                   >
                     {submitResult.accepted ? (
@@ -787,19 +789,19 @@ const ProblemPage = () => {
                           </h4>
 
                           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-2">
-                            <div className="rounded-lg bg-base-200 px-3 py-2 text-center">
+                            <div className="rounded-lg bg-[#191E24] px-3 py-2 text-center">
                               <p className="text-xs text-gray-400">Testcases</p>
                               <p className="font-semibold text-white">
                                 {submitResult.passedTestCases}/{submitResult.testCasesTotal}
                               </p>
                             </div>
-                            <div className="rounded-lg bg-base-200 px-3 py-2 text-center">
+                            <div className="rounded-lg bg-[#191E24] px-3 py-2 text-center">
                               <p className="text-xs text-gray-400">Runtime</p>
                               <p className="font-semibold text-white">
                                 {submitResult.runtime}s
                               </p>
                             </div>
-                            <div className="rounded-lg bg-base-200 px-3 py-2 text-center">
+                            <div className="rounded-lg bg-[#191E24] px-3 py-2 text-center">
                               <p className="text-xs text-gray-400">Memory</p>
                               <p className="font-semibold text-white">
                                 {submitResult.memory} KB
@@ -814,7 +816,7 @@ const ProblemPage = () => {
                             Submitted Code
                           </h2>
 
-                          <div className="rounded-2xl overflow-hidden border border-base-300 max-h-[60vh] shadow-inner">
+                          <div className="rounded-2xl overflow-hidden border border-[#15191E] max-h-[60vh] shadow-inner">
                             <SyntaxHighlighter
                               language="javascript"
                               style={vscDarkPlus}
@@ -831,7 +833,7 @@ const ProblemPage = () => {
                           ❌ {submitResult.error}
                         </h4>
 
-                        <div className="rounded-lg bg-base-200 px-4 py-3 text-sm text-gray-300">
+                        <div className="rounded-lg bg-[#191E24] px-4 py-3 text-sm text-gray-300">
                           Test Cases Passed:{' '}
                           <span className="font-semibold text-white">
                             {submitResult.passedTestCases}/{submitResult.totalTestCases}
@@ -859,5 +861,6 @@ const ProblemPage = () => {
 };
 
 export default ProblemPage;
+
 
 
