@@ -120,7 +120,7 @@ const Profilepage = () => {
                         <input
                             id='userfirstname'
                             {...register("firstName")}
-                            className="input input-bordered w-full bg-gray-800 border-gray-500"
+                            className="input input-bordered w-full text-white bg-gray-800 border-gray-500"
                         />
                         {errors.firstName && (
                             <p className="text-red-500 text-sm">{errors.firstName.message}</p>
@@ -133,7 +133,7 @@ const Profilepage = () => {
                         <input
                             id='userlasrname'
                             {...register("lastName")}
-                            className="input input-bordered w-full bg-gray-800 border-gray-500"
+                            className="input input-bordered w-full text-white bg-gray-800 border-gray-500"
                         />
                         {errors.lastName && (
                             <p className="text-red-500 text-sm">{errors.lastName.message}</p>
@@ -147,7 +147,7 @@ const Profilepage = () => {
                             id='useremail'
                             {...register("emailId")}
                             readOnly
-                            className="input input-bordered w-full bg-gray-800 border-gray-500 opacity-50 cursor-not-allowed"
+                            className="input input-bordered w-full text-white bg-gray-800 border-gray-500 opacity-50 cursor-not-allowed"
                         />
                         {errors.emailId && (
                             <p className="text-red-500 text-sm">{errors.emailId.message}</p>
@@ -161,7 +161,7 @@ const Profilepage = () => {
                             id='userage'
                             type="number"
                             {...register("age")}
-                            className="input input-bordered w-full bg-gray-800 border-gray-500"
+                            className="input input-bordered w-full text-white bg-gray-800 border-gray-500"
                         />
                         {errors.age && (
                             <p className="text-red-500 text-sm">{errors.age.message}</p>
@@ -175,7 +175,7 @@ const Profilepage = () => {
                             id='userrole'
                             {...register("role")}
                             readOnly
-                            className="input input-bordered w-full bg-gray-800 border-gray-500 opacity-50 cursor-not-allowed"
+                            className="input input-bordered w-full text-white bg-gray-800 border-gray-500 opacity-50 cursor-not-allowed"
                         />
                     </div>
 
@@ -188,7 +188,7 @@ const Profilepage = () => {
                                 id='old_password'
                                 type={showOldPassword ? "text" : "password"}
                                 {...register("old_password")}
-                                className="input input-bordered w-full bg-gray-800 border-gray-500 pr-10"
+                                className="input input-bordered w-full text-white bg-gray-800 border-gray-500 pr-10"
                             />
                             <button
                                 type="button"
@@ -237,7 +237,7 @@ const Profilepage = () => {
                                 id='usernewpassword'
                                 type={showNewPassword ? "text" : "password"}
                                 {...register("new_password")}
-                                className="input input-bordered w-full bg-gray-800 border-gray-500 pr-10"
+                                className="input input-bordered w-full text-white bg-gray-800 border-gray-500 pr-10"
                             />
                             <button
                                 type="button"
@@ -315,5 +315,6 @@ const Profilepage = () => {
 }
 
 export default Profilepage
+
 
 
