@@ -93,7 +93,7 @@ const Profilepage = () => {
 
     return (
         <div className='bg-[#020617]'>
-            <div className="flex items-center justify-between px-6 py-4 bg-[#020617] shadow-md rounded-xl mb-6 w-full flex-wrap gap-y-4">
+            <div className="flex items-center justify-between px-6 py-4 bg-[#1D232A] shadow-md rounded-xl mb-6 w-full flex-wrap gap-y-4">
                 <NavLink
                     to="/"
                     className="text-base font-semibold uppercase text-gray-100 hover:text-blue-600 hover:underline transition"
@@ -315,3 +315,4 @@ const Profilepage = () => {
 }
 
 export default Profilepage
+
