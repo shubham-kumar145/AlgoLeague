@@ -116,11 +116,11 @@ const Profilepage = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 w-[98%]">
                     {/* First Name */}
                     <div>
-                        <label htmlFor="userfirstname" className="block mb-1">First Name</label>
+                        <label htmlFor="userfirstname" className="block mb-1 text-white">First Name</label>
                         <input
                             id='userfirstname'
                             {...register("firstName")}
-                            className="input input-bordered w-full bg-gray-800 border-gray-700"
+                            className="input input-bordered w-full bg-gray-800 border-gray-500"
                         />
                         {errors.firstName && (
                             <p className="text-red-500 text-sm">{errors.firstName.message}</p>
@@ -129,11 +129,11 @@ const Profilepage = () => {
 
                     {/* Last Name */}
                     <div>
-                        <label htmlFor="userlasrname" className="block mb-1">Last Name</label>
+                        <label htmlFor="userlasrname" className="block mb-1 text-white">Last Name</label>
                         <input
                             id='userlasrname'
                             {...register("lastName")}
-                            className="input input-bordered w-full bg-gray-800 border-gray-700"
+                            className="input input-bordered w-full bg-gray-800 border-gray-500"
                         />
                         {errors.lastName && (
                             <p className="text-red-500 text-sm">{errors.lastName.message}</p>
@@ -142,12 +142,12 @@ const Profilepage = () => {
 
                     {/* Email (read-only) */}
                     <div>
-                        <label htmlFor="useremail" className="block mb-1">Email</label>
+                        <label htmlFor="useremail" className="block mb-1 text-white">Email</label>
                         <input
                             id='useremail'
                             {...register("emailId")}
                             readOnly
-                            className="input input-bordered w-full bg-gray-800 border-gray-700 opacity-50 cursor-not-allowed"
+                            className="input input-bordered w-full bg-gray-800 border-gray-500 opacity-50 cursor-not-allowed"
                         />
                         {errors.emailId && (
                             <p className="text-red-500 text-sm">{errors.emailId.message}</p>
@@ -156,12 +156,12 @@ const Profilepage = () => {
 
                     {/* Age */}
                     <div>
-                        <label htmlFor="userage" className="block mb-1">Age</label>
+                        <label htmlFor="userage" className="block mb-1 text-white">Age</label>
                         <input
                             id='userage'
                             type="number"
                             {...register("age")}
-                            className="input input-bordered w-full bg-gray-800 border-gray-700"
+                            className="input input-bordered w-full bg-gray-800 border-gray-500"
                         />
                         {errors.age && (
                             <p className="text-red-500 text-sm">{errors.age.message}</p>
@@ -170,25 +170,25 @@ const Profilepage = () => {
 
                     {/* Role (read-only) */}
                     <div>
-                        <label htmlFor="userrole" className="block mb-1">Role</label>
+                        <label htmlFor="userrole" className="block mb-1 text-white">Role</label>
                         <input
                             id='userrole'
                             {...register("role")}
                             readOnly
-                            className="input input-bordered w-full bg-gray-800 border-gray-700 opacity-50 cursor-not-allowed"
+                            className="input input-bordered w-full bg-gray-800 border-gray-500 opacity-50 cursor-not-allowed"
                         />
                     </div>
 
                     {/* Old Password */}
                     <div>
                         {/* <label htmlFor=""></label> */}
-                        <label htmlFor="old_password" className="block mb-1">Old Password</label>
+                        <label htmlFor="old_password" className="block mb-1 text-white">Old Password</label>
                         <div className="relative">
                             <input
                                 id='old_password'
                                 type={showOldPassword ? "text" : "password"}
                                 {...register("old_password")}
-                                className="input input-bordered w-full bg-gray-800 border-gray-700 pr-10"
+                                className="input input-bordered w-full bg-gray-800 border-gray-500 pr-10"
                             />
                             <button
                                 type="button"
@@ -231,13 +231,13 @@ const Profilepage = () => {
 
                     {/* New Password */}
                     <div>
-                        <label htmlFor='usernewpassword' className="block mb-1">New Password</label>
+                        <label htmlFor='usernewpassword' className="block mb-1 text-white">New Password</label>
                         <div className="relative">
                             <input
                                 id='usernewpassword'
                                 type={showNewPassword ? "text" : "password"}
                                 {...register("new_password")}
-                                className="input input-bordered w-full bg-gray-800 border-gray-700 pr-10"
+                                className="input input-bordered w-full bg-gray-800 border-gray-500 pr-10"
                             />
                             <button
                                 type="button"
@@ -315,4 +315,5 @@ const Profilepage = () => {
 }
 
 export default Profilepage
+
 
