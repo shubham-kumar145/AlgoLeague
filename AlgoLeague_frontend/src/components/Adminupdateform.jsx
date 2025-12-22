@@ -358,7 +358,7 @@ const AdminUpdateform = () => {
 
   /* ====================== UI ====================== */
   return (
-    <div className="min-h-screen bg-[#1D232A] px-4 py-6 overflow-y-auto">
+    <div className="min-h-screen bg-[#020617] px-4 py-6 overflow-y-auto">
 
       {/* ===== HEADER ===== */}
       <div className="flex items-center justify-between bg-[#1D232A] rounded-xl px-6 py-4 shadow-md mb-6 flex-wrap gap-y-4 border border-[#15191E]">
@@ -389,7 +389,7 @@ const AdminUpdateform = () => {
           <input
             {...register("title")}
             placeholder="Problem Title"
-            className="input input-bordered w-full bg-[#191E24] text-white"
+            className="input input-bordered w-full bg-[#1E2939] text-white"
           />
           {errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
 
@@ -469,5 +469,6 @@ const AdminUpdateform = () => {
 };
 
 export default AdminUpdateform;
+
 
 
