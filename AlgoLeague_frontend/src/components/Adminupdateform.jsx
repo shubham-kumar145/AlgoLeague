@@ -396,7 +396,7 @@ const AdminUpdateform = () => {
           <textarea
             {...register("description")}
             placeholder="Problem Description"
-            className="textarea textarea-bordered w-full bg-[#191E24] text-white h-32"
+            className="textarea textarea-bordered w-full bg-[#1E2939] text-white h-32"
           />
           {errors.description && <p className="text-red-500 text-sm">{errors.description.message}</p>}
 
@@ -469,6 +469,7 @@ const AdminUpdateform = () => {
 };
 
 export default AdminUpdateform;
+
 
 
 
