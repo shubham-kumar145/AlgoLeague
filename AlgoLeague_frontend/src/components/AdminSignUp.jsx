@@ -281,7 +281,7 @@ const AdminSignUp = () => {
       </div>
 
       <div className="flex justify-center flex-1">
-        <div className="w-full max-w-3xl bg-base-100 rounded-2xl shadow-xl p-6">
+        <div className="w-full max-w-3xl bg-[#1D232A] rounded-2xl shadow-xl p-6">
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
@@ -442,3 +442,4 @@ const AdminSignUp = () => {
 };
 
 export default AdminSignUp;
+
