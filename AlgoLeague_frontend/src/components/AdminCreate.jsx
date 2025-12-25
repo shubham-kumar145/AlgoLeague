@@ -369,25 +369,25 @@ function AdminPanel() {
             <input
               {...register("title")}
               placeholder="Problem Title"
-              className="input input-bordered w-full bg-blue-100"
+              className="input input-bordered w-full bg-blue-100 text-black"
             />
             {errors.title && <p className="text-red-400 text-sm">{errors.title.message}</p>}
 
             <textarea
               {...register("description")}
               placeholder="Problem Description"
-              className="textarea textarea-bordered w-full min-h-[120px] bg-blue-100"
+              className="textarea textarea-bordered w-full min-h-[120px] bg-blue-100 text-black"
             />
             {errors.description && <p className="text-red-400 text-sm">{errors.description.message}</p>}
 
             <div className="flex gap-4 flex-wrap ">
-              <select {...register("difficulty")} className="select select-bordered bg-blue-100">
+              <select {...register("difficulty")} className="select select-bordered bg-blue-100 text-black">
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
               </select>
 
-              <select {...register("tags")} className="select select-bordered bg-blue-100">
+              <select {...register("tags")} className="select select-bordered bg-blue-100 text-black">
                 <option value="array">Array</option>
                 <option value="linkedlist">Linked List</option>
                 <option value="graph">Graph</option>
@@ -445,13 +445,13 @@ function AdminPanel() {
               <textarea
                 {...register(`StartCode.${index}.initialcode`)}
                 placeholder="Starter Code"
-                className="textarea textarea-bordered w-full min-h-[140px] bg-blue-100"
+                className="textarea textarea-bordered w-full min-h-[140px] bg-blue-100 text-black"
               />
 
               <textarea
                 {...register(`referenceSolution.${index}.completeCode`)}
                 placeholder="Reference Solution"
-                className="textarea textarea-bordered w-full min-h-[160px] bg-blue-50"
+                className="textarea textarea-bordered w-full min-h-[160px] bg-blue-50 text-black"
               />
             </div>
           ))}
@@ -468,3 +468,4 @@ function AdminPanel() {
 }
 
 export default AdminPanel;
+
